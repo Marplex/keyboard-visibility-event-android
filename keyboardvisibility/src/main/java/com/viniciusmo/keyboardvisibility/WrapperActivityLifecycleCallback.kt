@@ -6,7 +6,7 @@ import android.os.Bundle
 
 internal abstract class WrapperActivityLifecycleCallback internal constructor(private val currentActivity: Activity) : Application.ActivityLifecycleCallbacks {
 
-    override fun onActivityCreated(activity: Activity, bundle: Bundle) = Unit
+    override fun onActivityCreated(activity: Activity, bundle: Bundle?) = Unit
 
     override fun onActivityStarted(activity: Activity) = Unit
 
@@ -16,7 +16,7 @@ internal abstract class WrapperActivityLifecycleCallback internal constructor(pr
 
     override fun onActivityStopped(activity: Activity) = Unit
 
-    override fun onActivitySaveInstanceState(activity: Activity, bundle: Bundle) = Unit
+    override fun onActivitySaveInstanceState(activity: Activity, bundle: Bundle?) = Unit
 
     override fun onActivityDestroyed(activity: Activity) {
         if (activity === currentActivity) {
